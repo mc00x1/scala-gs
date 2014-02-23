@@ -2,10 +2,8 @@
 .svn
 .cache
 .gradle
-.settings
 .metadata
 .target
 .project
 .classpath
 build
-bin
