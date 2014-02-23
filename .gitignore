@@ -3,7 +3,9 @@
 .cache
 .gradle
 .metadata
+.settings
 .target
 .project
 .classpath
 build
+bin
