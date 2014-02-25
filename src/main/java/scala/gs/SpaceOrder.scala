@@ -23,7 +23,7 @@ class SpaceOrder protected {
 
   @(SpaceProperty @beanGetter)(nullValue = "-1")
   @BeanProperty
-  protected var processed: Long = _ 
+  var processed: Long = _ 
 
   def this(id: String) {
     this
