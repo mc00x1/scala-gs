@@ -52,5 +52,4 @@ dependencies {
 
     testCompile 'junit:junit:4.+'
     testCompile libraries.scalaTest
-  
 }
