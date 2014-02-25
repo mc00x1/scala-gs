@@ -28,15 +28,8 @@ class SpaceOrderTest extends FunSpec with Space with MustMatchers with BeforeAnd
   }
 
   protected def assertProcessed(sampleFunc: () => SpaceOrder, satisfactionFunc: SpaceOrder => Boolean) {
-<<<<<<< HEAD
     val observer = new BlockingObserver(satisfactionFunc)
     (new Observable(sampleFunc)).subscribe(observer)
-=======
-    val latch: CountDownLatch = new CountDownLatch(1)
-    val observer = new TestObserver(satisfactionFunc, latch)
-    (new Observable(sampleFunc)).subscribe(observer)
-    latch.await()
->>>>>>> 4ebdfd984b45f643f8e0f873c6b2813f60800b4c
     observer.isProcessed must be(true)
   }
 
@@ -52,20 +45,11 @@ class SpaceOrderTest extends FunSpec with Space with MustMatchers with BeforeAnd
     }
   }
 
-<<<<<<< HEAD
   private class BlockingObserver(f: (SpaceOrder) => Boolean) extends Observer(f) {
     var latch: CountDownLatch = new CountDownLatch(1) 
 
     override def onSubscribe {
       latch.await()
-=======
-  private class TestObserver(f: (SpaceOrder) => Boolean) extends Observer(f) {
-    var latch: CountDownLatch = null
-
-    def this(f: (SpaceOrder) => Boolean, latch: CountDownLatch) {
-      this(f)
-      this.latch = latch
->>>>>>> 4ebdfd984b45f643f8e0f873c6b2813f60800b4c
     }
 
     override def onComplete {
