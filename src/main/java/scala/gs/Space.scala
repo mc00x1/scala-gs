@@ -12,7 +12,7 @@ import org.openspaces.events.polling.receive.AbstractFifoGroupingReceiveOperatio
 import org.openspaces.events.SpaceDataEventListener
 import org.openspaces.events.polling.receive.SingleTakeReceiveOperationHandler
 
-trait EmptySpace {
+trait Space {
 
   private lazy val iSpaceConfigurer = new UrlSpaceConfigurer("/./mc-space")
   val transactionManager: PlatformTransactionManager = new DistributedJiniTxManagerConfigurer().transactionManager()

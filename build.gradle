@@ -8,6 +8,9 @@ version = 'DEVEL-SNAPSHOT'
 repositories {
     mavenCentral()
     mavenLocal()
+    maven {
+      url "http://nexus/content/repositories/releases"
+    }
 }
 
 ext {
@@ -42,6 +45,7 @@ dependencies {
     compile 'commons-collections:commons-collections:3.2'
     compile "com.gigaspaces:gs-runtime:$gsVersion"
     compile "com.gigaspaces:gs-openspaces:$gsVersion"
+    compile "com.gigaspaces:gs-openspaces-scala:$gsVersion"
     compile 'com.gigaspaces:gs-license:DEVEL-SNAPSHOT'
     compile libraries.scala 
     compile libraries.scalaTest 
