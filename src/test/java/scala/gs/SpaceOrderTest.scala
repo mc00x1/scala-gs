@@ -29,7 +29,8 @@ class SpaceOrderTest extends FunSpec with Space with MustMatchers with BeforeAnd
 
   protected def assertProcessed(sampleFunc: () => SpaceOrder, satisfactionFunc: SpaceOrder => Boolean) {
     val observer = new BlockingObserver(satisfactionFunc)
-    (new Observable(sampleFunc)).subscribe(observer)
+    val observable = new Observable(sampleFunc)
+    observable.subscribe(observer)
     observer.isProcessed must be(true)
   }
 
