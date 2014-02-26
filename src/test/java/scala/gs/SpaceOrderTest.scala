@@ -5,9 +5,7 @@ import org.junit.runner.RunWith
 import org.scalatest.matchers.MustMatchers
 import org.scalatest.BeforeAndAfterAll
 import com.gigaspaces.annotation.pojo.SpaceClass
-import scala.testutils.Probe
 import org.scalatest.junit.JUnitRunner
-import scala.testutils.Poller
 import scala.testutils.Observer
 import scala.testutils.Observable
 import org.openspaces.scala.core.ScalaGigaSpacesImplicits._
